@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <link rel="stylesheet" href="css/style.less">   
 
         <!-- Latest compiled and minified CSS -->
@@ -24,13 +24,22 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="center" style="text-align: center;">
+                    <br>
+                    <h1>
+                    <a href="#" data-toggle="modal" data-target="#login-modal">Login to your account</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
 
-        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog">
                 <div class="loginmodal-container">
+
                     <h1>Login to Your Account</h1><br>
                     <form method="post" action="validate.jsp">
                         <input type="text" name="username" placeholder="Username" required>

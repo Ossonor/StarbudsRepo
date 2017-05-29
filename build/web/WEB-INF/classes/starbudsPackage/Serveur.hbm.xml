@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 avr. 2017 16:54:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="starbudsPackage.Serveur" table="serveur" catalog="starbuds" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="nom" type="string">
+            <column name="nom" length="20" not-null="true" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="prenom" length="20" not-null="true" />
+        </property>
+        <property name="login" type="string">
+            <column name="login" length="20" not-null="true" />
+        </property>
+        <property name="mdp" type="string">
+            <column name="mdp" length="20" not-null="true" />
+        </property>
+        <property name="enActivite" type="boolean">
+            <column name="en_activite" not-null="true" />
+        </property>
+        <set name="commandes" table="commande" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_Serveur" not-null="true" />
+            </key>
+            <one-to-many class="starbudsPackage.Commande" />
+        </set>
+    </class>
+</hibernate-mapping>
