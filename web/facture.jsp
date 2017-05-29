@@ -66,7 +66,7 @@
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="index.jsp">Home</a></li>
-                    <li><a href="#">Commande</a></li>
+                    <li><a href="commande.jsp">Commande</a></li>
                     <li><a href="facture.jsp">Facture</a></li>
                     <li><a href="#">Serveur</a></li>
                 </ul>
