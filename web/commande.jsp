@@ -4,6 +4,28 @@
     Author     : Mikaël
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%
+    ArrayList<String> commandeList = new ArrayList<String>();
+    Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/starbuds?" + "user=root&password=root");
+    PreparedStatement pst = conn.prepareStatement("Select * from commande");
+    ResultSet rs = pst.executeQuery();
+    while (rs.next()) {
+
+        commandeList.add(rs.getString(1));
+        commandeList.add(rs.getString(2));
+        commandeList.add(rs.getString(3));
+        commandeList.add(rs.getString(4));
+        commandeList.add(rs.getString(5));
+    }
+
+    request.setAttribute("listecommande", commandeList);
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,6 +44,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Facture</title>
     </head>
+
     <body>
 
         <nav class="navbar navbar-default navbar-static-top">
@@ -108,5 +131,30 @@
             </footer>
         </div>
 
+        <div class="panel-body">
+            <table class="table table-striped">
+                <%    ArrayList<String> items = (ArrayList<String>) request.getAttribute("listecommande");
+                    String var = null;
+                    for (int i = 0; i < items.size(); i++) {
+                        var = items.get(i);
+                %>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Numéro</th>
+                        <th>Date</th>
+                        <th>Etat</th>
+                        <th>Serveur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= var%></td>
+                    </tr>
+                    <% }%>
+                </tbody>
+            </table>
+        </div>
+                
     </body>
 </html>
