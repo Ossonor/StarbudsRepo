@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 avr. 2017 16:54:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="starbudsPackage.Produit" table="produit" catalog="starbuds" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="libelle" type="string">
+            <column name="libelle" length="50" not-null="true" />
+        </property>
+        <property name="prix" type="float">
+            <column name="prix" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 avr. 2017 16:54:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="starbudsPackage.Commande" table="commande" catalog="starbuds" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="serveur" class="starbudsPackage.Serveur" fetch="select">
+            <column name="id_Serveur" not-null="true" />
+        </many-to-one>
+        <property name="numero" type="int">
+            <column name="numero" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="etat" type="string">
+            <column name="etat" length="20" not-null="true" />
+        </property>
+        <set name="factures" table="facture" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_Commande" not-null="true" />
+            </key>
+            <one-to-many class="starbudsPackage.Facture" />
+        </set>
+    </class>
+</hibernate-mapping>
