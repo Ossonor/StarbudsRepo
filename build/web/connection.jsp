@@ -29,8 +29,10 @@
                 <div class="center" style="text-align: center;">
                     <br>
                     <h1>
-                    <a href="#" data-toggle="modal" data-target="#login-modal">Login to your account</a>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login to your account</a>
                     </h1>
+
+                    <a href="#" data-toggle="modal" data-target="#inscription-modal">Créer un compte Serveur</a>
                 </div>
             </div>
         </div>
@@ -46,10 +48,20 @@
                         <input type="password" name="password" placeholder="Password" required>
                         <input type="submit" name="submit" class="login loginmodal-submit" value="Login">
                     </form>
+                </div>
+            </div>
+        </div>
 
-                    <div class="login-help">
-                        <a href="#">Register</a>
-                    </div>
+        <div class="modal fade" id="inscription-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="loginmodal-container">
+                    <h1>Créer un serveur</h1><br>
+                    <form method="post" action="validateInscription.jsp">
+                        <input type="text" name="nom" placeholder="Nom">
+                        <input type="text" name="prenom" placeholder="Prenom">
+                        <input type="password" name="password" placeholder="Mot de passe">
+                        <input type="submit" name="submit" class="login loginmodal-submit" value="Créer">
+                    </form>
                 </div>
             </div>
         </div>
