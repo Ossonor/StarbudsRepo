@@ -21,8 +21,9 @@
         out.println(pst);
         ResultSet rs = pst.executeQuery();
         if (rs.next()) {
-            out.println("Valid login credentials");
-
+            out.println("Valid login");
+            
+            session.setAttribute("id", rs.getInt(1));
             session.setAttribute("nom", rs.getString(2));
             session.setAttribute("prenom", rs.getString(3));
             session.setAttribute("enActivite", rs.getString(6));
@@ -31,9 +32,9 @@
             response.sendRedirect(redirectURL);
 
         } else {
-            out.println("Invalid login credentials");
+            out.println("Invalid login");
         }
     } catch (Exception e) {
-        out.println("Something went wrong !! Please try again");
+        out.println("La connexion a échoué");
     }
 %>
