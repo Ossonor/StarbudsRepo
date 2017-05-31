@@ -37,6 +37,7 @@
                     <a class="navbar-brand" href="#">
                         Starbuds Ganja
                     </a>
+                    <img alt="logo" src="images/logo-mini.png" style="width:6%; padding-top: 5px;"/>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,10 +66,10 @@
         <div class="container-fluid main-container">
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="index.jsp">Home</a></li>
-                    <li><a href="commande.jsp">Commande</a></li>
-                    <li><a href="facture.jsp">Facture</a></li>
-                    <li><a href="#">Serveur</a></li>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="commande">Commande</a></li>
+                    <li class="active"><a href="facture.jsp">Facture</a></li>
+                    <li><a href="serveur">Serveur</a></li>
                 </ul>
             </div>
             <div class="col-md-10 content">

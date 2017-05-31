@@ -4,12 +4,19 @@
     Author     : Mikaël
 --%>
 
+
+<%@page import="starbudsPackage.Serveur"%>
+<%@page import="starbudsPackage.Commande"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
-<%
+<%/*
     ArrayList<String> commandeList = new ArrayList<String>();
     Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/starbuds?" + "user=root&password=root");
@@ -22,9 +29,11 @@
         commandeList.add(rs.getString(3));
         commandeList.add(rs.getString(4));
         commandeList.add(rs.getString(5));
+
     }
 
     request.setAttribute("listecommande", commandeList);
+     */
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -60,6 +69,7 @@
                     <a class="navbar-brand" href="#">
                         Starbuds Ganja
                     </a>
+                    <img alt="logo" src="images/logo-mini.png" style="width:6%; padding-top: 5px;"/>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,10 +98,10 @@
         <div class="container-fluid main-container">
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="index.jsp">Home</a></li>
-                    <li><a href="commande.jsp">Commande</a></li>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li class="active"><a href="commande">Commande</a></li>
                     <li><a href="facture.jsp">Facture</a></li>
-                    <li><a href="#">Serveur</a></li>
+                    <li><a href="serveur">Serveur</a></li>
                 </ul>
             </div>
             <div class="col-md-10 content">
@@ -99,6 +109,7 @@
                     <div class="panel-heading">
                         Commande
                     </div>
+
                     <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
@@ -111,16 +122,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                </tr>
+
+                                <%   
+                                    List<Commande> listecommande = (List<Commande>) request.getAttribute("listecommande");
+
+                                    for (int i = 0; i < listecommande.size(); i++) {
+                                        Commande row = (Commande) listecommande.get(i);
+                                        Serveur serveur = new Serveur();
+                                        serveur = row.getServeur();
+
+                                        out.println("<tr><td>" + row.getId() + "</td>");
+                                        out.println("<td>" + row.getNumero() + "</td>");
+                                        out.println("<td>" + row.getDate() + "</td>");
+                                        out.println("<td>" + row.getEtat() + "</td>");
+                                        out.println("<td>" + serveur.getPrenom() + " " + serveur.getNom() + "</td></tr>");
+                                    }
+                                %>
+
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
             <footer class="pull-left footer">
@@ -130,31 +152,5 @@
                 </p>
             </footer>
         </div>
-
-        <div class="panel-body">
-            <table class="table table-striped">
-                <%    ArrayList<String> items = (ArrayList<String>) request.getAttribute("listecommande");
-                    String var = null;
-                    for (int i = 0; i < items.size(); i++) {
-                        var = items.get(i);
-                %>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Numéro</th>
-                        <th>Date</th>
-                        <th>Etat</th>
-                        <th>Serveur</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><%= var%></td>
-                    </tr>
-                    <% }%>
-                </tbody>
-            </table>
-        </div>
-                
     </body>
 </html>

@@ -8,4 +8,22 @@
     <welcome-file-list>
         <welcome-file>connection.jsp</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>commande</servlet-name>
+        <servlet-class>starbudsPackage.Controller.CommandeController</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>commande</servlet-name>
+        <url-pattern>/commande</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>serveur</servlet-name>
+        <servlet-class>starbudsPackage.Controller.ServeurController</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>serveur</servlet-name>
+        <url-pattern>/serveur</url-pattern>
+    </servlet-mapping>
 </web-app>
