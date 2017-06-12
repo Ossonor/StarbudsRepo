@@ -107,11 +107,14 @@
                                 <%
                                     List<Serveur> listeserveur = (List<Serveur>) request.getAttribute("listeserveur");
                                     String activite;
+                                    Integer serveurId;
 
                                     for (int i = 0; i < listeserveur.size(); i++) {
                                         Serveur row = (Serveur) listeserveur.get(i);
                                         //Serveur serveur = new Serveur();
                                         //serveur = row.getServeur();
+                                        
+                                        serveurId = row.getId();
 
                                         out.println("<tr><td>" + row.getId() + "</td>");
                                         out.println("<td>" + row.getNom() + "</td>");
@@ -133,7 +136,7 @@
                                 %>
                             <form action="changeactivite.jsp" method="post">
                                 <input type="hidden" name="activite" value="<% out.print(activite); %>" />
-                                <input type="hidden" name="serveur" value="<% out.print(id); %>" />
+                                <input type="hidden" name="serveur" value="<% out.print(serveurId); %>" />
                                 <button class="btn btn-primary" type="submit" value="changeactivite" name="button">Changer d'état</button>
                             </form>
 

@@ -22,13 +22,10 @@
         if (activite.equals("1"))
         {
             activite = "0";
-            System.out.println("caca");
         }
         else
         {
             activite = "1";
-            System.out.println("pipiiiiii");
-
         }
         
         System.out.println(activite);
