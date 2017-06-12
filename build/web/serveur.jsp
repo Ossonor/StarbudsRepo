@@ -106,6 +106,7 @@
 
                                 <%
                                     List<Serveur> listeserveur = (List<Serveur>) request.getAttribute("listeserveur");
+                                    String activite;
 
                                     for (int i = 0; i < listeserveur.size(); i++) {
                                         Serveur row = (Serveur) listeserveur.get(i);
@@ -117,20 +118,22 @@
                                         out.println("<td>" + row.getPrenom() + "</td>");
 
                                         if (row.isEnActivite() == true) {
-                                            out.println("<td>En activité</td></tr>");
+                                            out.println("<td>En activité</td>");
+                                            activite = "1";
                                         } else {
                                             out.println("<td>En pause</td>");
+                                            activite = "0";
                                         }
 
                                         int id = (Integer) session.getAttribute("id");
-                                        String activite = (String) session.getAttribute("enActivite");
+                                        //String activite = (String) session.getAttribute("enActivite");
 
                                         if (id == 1) {
                                             out.println("<td>");
                                 %>
                             <form action="changeactivite.jsp" method="post">
-                                <input type="hidden" name="activite" value="<% out.println(activite); %>" />
-                                <input type="hidden" name="serveur" value="<% out.println(id); %>" />
+                                <input type="hidden" name="activite" value="<% out.print(activite); %>" />
+                                <input type="hidden" name="serveur" value="<% out.print(id); %>" />
                                 <button class="btn btn-primary" type="submit" value="changeactivite" name="button">Changer d'état</button>
                             </form>
 
