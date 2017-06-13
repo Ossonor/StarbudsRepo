@@ -29,7 +29,7 @@
                 <div class="center" style="text-align: center;">
                     <br>
                     <h1>
-                        <a href="#" data-toggle="modal" data-target="#login-modal">Login to your account</a>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Se connecter</a>
                     </h1>
 
                     <a href="#" data-toggle="modal" data-target="#inscription-modal">Créer un compte Serveur</a>
@@ -42,10 +42,10 @@
             <div class="modal-dialog">
                 <div class="loginmodal-container">
 
-                    <h1>Login to Your Account</h1><br>
+                    <h1>Se connecter</h1><br>
                     <form method="post" action="validate.jsp">
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="text" name="username" placeholder="Login" required>
+                        <input type="password" name="password" placeholder="Mot de passe" required>
                         <input type="submit" name="submit" class="login loginmodal-submit" value="Login">
                     </form>
                 </div>

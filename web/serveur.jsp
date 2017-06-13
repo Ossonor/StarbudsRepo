@@ -33,7 +33,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Facture</title>
+        <title>Serveur</title>
     </head>
 
     <body>
@@ -62,7 +62,7 @@
                         </div>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Account
+                                Mon compte
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header">SETTINGS</li>
@@ -80,7 +80,7 @@
         <div class="container-fluid main-container">
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Accueil</a></li>
                     <li><a href="commande">Commande</a></li>
                     <li><a href="facture.jsp">Facture</a></li>
                     <li class="active"><a href="serveur">Serveur</a></li>
@@ -149,8 +149,24 @@
 
                                   </tbody>
                         </table>
-                    </div>
+                                                                              <%
+                    int id = (Integer) session.getAttribute("id");
+                    if (id == 1) {
+                        
+                                %>
+                                <div>
+                                <div class="row" style="padding-left: 10px;">
+                                    <form action="changeactivite.jsp" method="post">
+                                        <button class="btn btn-primary" type="submit" value="changeactivite" name="button">Nouveau serveur</button>
+                                    </form>
+                                </div>
+                                </div>
 
+                                  <% 
+                                      }
+                                  %>
+                    </div>
+                    
                 </div>
             </div>
             <footer class="pull-left footer">

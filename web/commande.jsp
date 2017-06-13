@@ -51,7 +51,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Facture</title>
+        <title>Commande</title>
     </head>
 
     <body>
@@ -80,7 +80,7 @@
                         </div>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Account
+                                Mon compte
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header">SETTINGS</li>
@@ -98,7 +98,7 @@
         <div class="container-fluid main-container">
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Accueil</a></li>
                     <li class="active"><a href="commande">Commande</a></li>
                     <li><a href="facture.jsp">Facture</a></li>
                     <li><a href="serveur">Serveur</a></li>
@@ -138,11 +138,25 @@
                                         out.println("<td>" + serveur.getPrenom() + " " + serveur.getNom() + "</td></tr>");
                                     }
                                 %>
-
                             </tbody>
                         </table>
-                    </div>
+                                                                        <%
+                    int id = (Integer) session.getAttribute("id");
+                    if (id == 1) {
+                        
+                                %>
+                                <div>
+                                <div class="row" style="padding-left: 10px;">
+                                    <form action="changeactivite.jsp" method="post">
+                                        <button class="btn btn-primary" type="submit" value="changeactivite" name="button">Nouvelle commande</button>
+                                    </form>
+                                </div>
+                                </div>
 
+                                  <% 
+                                      }
+                                  %>
+                    </div>
                 </div>
             </div>
             <footer class="pull-left footer">

@@ -49,7 +49,7 @@
                         </div>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Account
+                                Mon compte
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header">SETTINGS</li>
@@ -67,7 +67,7 @@
         <div class="container-fluid main-container">
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li class="active"><a href="index.jsp">Accueil</a></li>
                     <li><a href="commande">Commande</a></li>
                     <li><a href="facture.jsp">Facture</a></li>
                     <li><a href="serveur">Serveur</a></li>
@@ -76,15 +76,16 @@
             <div class="col-md-10 content">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Dashboard
+                        Tableau de bord
                     </div>
                     <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <div style="text-align: center;">
+                            <img src="images/starbuds_logo.jpg"/>
+                            <br/>
+                            <hr />
+                            <br/>
+                            Bienvenue sur le Tableau de bord de Starbuds Ganja.
+                        </div>
                     </div>
                 </div>
             </div>

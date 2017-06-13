@@ -48,7 +48,7 @@
                         </div>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Account
+                                Mon compte
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="dropdown-header">SETTINGS</li>
@@ -66,7 +66,7 @@
         <div class="container-fluid main-container">
             <div class="col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="index.jsp">Accueil</a></li>
                     <li><a href="commande">Commande</a></li>
                     <li class="active"><a href="facture.jsp">Facture</a></li>
                     <li><a href="serveur">Serveur</a></li>
@@ -82,19 +82,31 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Montant</th>
                                     <th>Commande</th>
-                                    <th>Status</th>
+                                    <th>Montant</th>
+                                    <th>Statut</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td>1</td>
+                                    <td>5.00€</td>
+                                    <td>Payée</td>
                                 </tr>
                                 <tr>
+                                    <th scope="row">2</th>
+                                    <td>2</td>
+                                    <td>7.50€</td>
+                                    <td>Payée</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>5</td>
+                                    <td>22.50€</td>
+                                    <td>Payée</td>
+                                </tr>
+                                <!--<tr>
                                     <th scope="row">2</th>
                                     <td>Jacob</td>
                                     <td>Thornton</td>
@@ -105,10 +117,27 @@
                                     <td>Larry</td>
                                     <td>the Bird</td>
                                     <td>@twitter</td>
-                                </tr>
+                                </tr>!-->
                             </tbody>
                         </table>
+                                            <%
+                    int id = (Integer) session.getAttribute("id");
+                    if (id == 1) {
+                        
+                                %>
+                                <div>
+                                <div class="row" style="padding-left: 10px;">
+                                    <form action="changeactivite.jsp" method="post">
+                                        <button class="btn btn-primary" type="submit" value="changeactivite" name="button">Nouvelle facture</button>
+                                    </form>
+                                </div>
+                                </div>
+
+                                  <% 
+                                      }
+                                  %>
                     </div>
+
                 </div>
             </div>
             <footer class="pull-left footer">

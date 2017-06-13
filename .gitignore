@@ -1,2 +1,4 @@
 
 nbproject/private/private\.xml
+
+build/web/WEB-INF/lib/mysql-connector-java-5\.1\.40-bin\.jar
