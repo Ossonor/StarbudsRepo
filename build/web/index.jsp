@@ -57,7 +57,7 @@
                                 <li class=""><a href="#">Other Link</a></li>
                                 <li class=""><a href="#">Other Link</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="#">Deconnexion</a></li>
                             </ul>
                         </li>
                     </ul>
